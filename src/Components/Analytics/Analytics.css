@@ -1,0 +1,247 @@
+/* General styling for home container */
+.analytics-container {
+  flex-direction: column;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ecf2f5;
+}
+
+.analytics-content {
+  padding-top: 5px;
+  width: 100%;
+  display: grid;
+  height: 88vh;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 5px;
+}
+
+/*All cards basic design*/
+.backlog-card,
+.task-performance-report-card,
+.task-timeline-card,
+.task-pie-chart-card {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-radius: 10px;
+  margin: 5px;
+}
+.timeline-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  color: #75777a;
+  text-transform: uppercase;
+  margin-left: 1%;
+}
+.backlog-card {
+  margin-top: 10px;
+  grid-area: 1 / 1 / 4 / 3;
+  padding-top: 5px;
+  padding: 20px;
+  padding-bottom: 0px;
+  height: 40vh;
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Disable horizontal scrolling */
+}
+
+.backlog-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  color: #75777a;
+  text-transform: uppercase;
+  margin-left: 1%;
+}
+
+/* Task List Styles */
+.backlog-task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.backlog-task-item {
+  background-color: #ecf2f5; /* Red background for task items */
+  padding: 10px;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 7px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: rgb(35, 33, 33);
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.backlog-task-item:hover {
+  background-color: #0a6476;
+  color: white;
+}
+/* Task Timeline Chart Card Styles */
+.task-timeline-card {
+  background-color: #ffffff; /* Yellow background */
+  padding: 0 20px;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 300px;
+  grid-area: 4 / 1 / 7 / 5;
+}
+
+/* Task Distribution Pie Chart Card */
+.task-pie-chart-card {
+  background-color: #ffffff; /* Yellow background */
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  overflow: auto;
+  min-width: 300px;
+  /* height: 80vh; */
+  grid-area: 1 / 5 / 7 / 7;
+}
+
+.line-chart-container {
+  display: flex;
+  justify-content: center;
+  margin-top: -30px;
+  height: 300px;
+  overflow-y: auto;
+}
+.pie-chart-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  height: 450px;
+  overflow-y: auto;
+}
+
+/* Add Task Form */
+.add-task-form {
+  margin-top: 20px;
+}
+
+.add-task-form input {
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+.manager-add-task-button {
+  background-color: #0a6476;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.manager-add-task-button:hover {
+  background-color: #555;
+}
+
+.task-performance-report-card {
+  grid-area: 1 / 3 / 4 / 5;
+  background-color: #ffffff; /* Light grey background */
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.task-performance-report-card h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  color: #75777a;
+  text-transform: uppercase;
+  margin-left: 1%;
+}
+.task-performance-report-card li {
+  list-style-type: none;
+  padding-bottom: 1%;
+}
+.task-performance-report-card ul {
+  padding-left: 2%;
+}
+
+.toggle-report-button {
+  background-color: #ffffff; /* Green background */
+  color: rgb(14, 13, 13);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.performance-report-content {
+  margin-top: 10px; /* Space between button and report */
+}
+
+/* Ensure cards are responsive */
+@media (max-width: 768px) {
+  .backlog-card,
+  .task-performance-report-card,
+  .task-timeline-card,
+  .manage-users-section,
+  .task-pie-chart-card {
+    width: calc(50% - 20px); /* 2 cards per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .backlog-card,
+  .task-performance-report-card,
+  .task-timeline-card,
+  .manage-users-section,
+  .task-pie-chart-card {
+    width: 100%; /* 1 card per row on very small screens */
+  }
+}
+
+.combined-analytics-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.combined-header {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.combined-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 20px;
+}
+
+.backlog-section,
+.timeline-section,
+.efficiency-section {
+  padding: 15px;
+}
+
+.efficiency-list {
+  list-style: none;
+  padding: 0;
+}
+
+.efficiency-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.training-suggestion {
+  margin-top: 15px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 5px;
+}

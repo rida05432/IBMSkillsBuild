@@ -1,0 +1,414 @@
+/* Main Content */
+.topics-content {
+  /* padding: 20px;
+  padding-top: 35px; */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center align items */
+  font-size: 36px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.topics-header {
+  display: flex;
+  color: #000000;
+  letter-spacing: 2px;
+  width: 100%;
+  font-size: 36px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Flex container for topics */
+/* Parent container adjustments */
+.main-topics-container {
+  background-color: #ecf2f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  grid-template-rows: repeat(
+    2,
+    auto
+  ); /* 2 rows (this will adjust based on content) */
+  gap: 10px;
+  width: 75vw;
+  justify-items: center; /* Center items horizontally */
+  /* height: 75vh; */
+}
+
+.topic-card {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 275px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.topic-image {
+  padding: 2%;
+  width: 95%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0; /* Rounded corners at the top */
+}
+
+.topic-card h2 {
+  font-size: 1.2rem;
+  margin: 5px 0 5px 0;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.topic-card:hover h2 {
+  color: #0066cc;
+}
+
+.topic-card[data-title="IBM Capstone"]:hover h2 {
+  color: #0066cc;
+}
+
+.topic-card p {
+  font-size: 0.9rem;
+  height: auto;
+  color: #555;
+  padding: 0 10px;
+  margin: 0 0 10px 0;
+}
+
+.category-label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.topic-card .actions {
+  /* margin-top: auto; */
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 0;
+}
+
+/* Hover effect for topic cards */
+.topic-card:hover {
+  height: auto; /* Allow expansion on hover */
+  max-height: 300px;
+  cursor: pointer;
+}
+/* Hover effect for topic cards */
+.topic-card:hover {
+  height: auto; /* Allow expansion on hover */
+  max-height: 300px;
+  cursor: pointer;
+}
+
+/* User Info in Top Right */
+.user-info {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.user-name {
+  margin-left: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.actions button {
+  background-color: #0a6476;
+  color: #ecf2f5;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background-color: #ecf2f5;
+  color: #0a6476;
+}
+
+/* Comment Section */
+.comment-section {
+  margin-top: 10px;
+  display: none; /* Hidden by default */
+}
+
+.topic-card:hover .comment-section {
+  display: block; /* Show on hover */
+}
+
+.add-comment {
+  margin-top: 10px;
+}
+
+.add-comment input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Centered Add Topic Form */
+.add-topic-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-topic-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-topic-form input,
+.add-topic-form textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-topic-form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Floating Button Styles */
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0a6476;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  padding: 10px;
+  padding-bottom: 5px;
+  cursor: pointer;
+  font-size: 24px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.floating-button.clicked {
+  background-color: #616161;
+}
+
+.floating-button .rotated {
+  transform: rotate(45deg);
+}
+
+/* Expanded Topic Modal */
+.expanded-topic-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it is above everything else */
+}
+
+.expanded-topic-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 800px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.expanded-topic-image {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+/* Comments Section in Expanded Topic */
+.expanded-comments-section {
+  margin-top: 20px;
+}
+
+.add-comment input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.no-posts-message {
+  font-size: 1.5rem;
+  color: #666;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.filter-buttons {
+  display: flex;
+  background-color: #f8f8f8;
+  color: white;
+  border-radius: 80px;
+  height: 37px;
+  width: 80%;
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.filter-buttons button {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 8px;
+  font-size: medium;
+  letter-spacing: 1px;
+  color: #0a6476;
+  font-family: "Abel";
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.filter-buttons button:not(:last-child) {
+  margin: 2px;
+  border-radius: 80px;
+  font-size: medium;
+  letter-spacing: 1px;
+  color: #0a6476;
+  font-family: "Abel";
+}
+
+.filter-buttons button:hover {
+  background-color: #e0e0e0;
+  border-radius: 80px;
+  margin: 2px;
+  font-family: "Abel";
+  /* font-size: medium; */
+  letter-spacing: 1px;
+  color: #333;
+  font-weight: 400;
+}
+
+.active-button {
+  color: #d02020; /* Change text color for active button */
+}
+
+.filter-buttons::after {
+  content: ""; /* Create the active highlight line */
+  display: block;
+  height: 2px; /* Height of the highlight */
+  background-color: #007bff; /* Color of the highlight */
+  position: absolute; /* Position relative to the container */
+  bottom: 0; /* Align to the bottom */
+  left: 0; /* Align to the left */
+  transition: left 0.3s ease; /* Smooth transition */
+}
+
+/* Category label */
+/* .category-label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+} */
+
+.category-label.technical {
+  background-color: #28a745;
+}
+
+.category-label.non-technical {
+  background-color: #dc3545;
+}
+
+/* Category selection buttons in Add Topic Form */
+.category-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.category-buttons button {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: grey;
+  cursor: pointer;
+}
+
+.category-buttons button.selected {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}

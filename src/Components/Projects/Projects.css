@@ -1,0 +1,213 @@
+.project-page {
+  padding: 20px;
+  width: 100vw;
+  background-color: #ecf2f5; /* Light background for contrast */
+}
+.projects-header {
+  display: flex;
+  display: flex;
+  color: #000000;
+  letter-spacing: 2px;
+  width: 100%;
+  font-size: 36px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.projects-page-wrapper {
+  display: flex;
+  width: 100%;
+}
+.no-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.projects-sidebar {
+  width: 22vw;
+  margin-left: 2%;
+  border-radius: 10px 0px 0px 10px;
+  height: 79vh;
+  background-color: white; /* White background for sidebar */
+  padding: 20px;
+  padding-right: 0px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Light shadow for separation */
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+}
+.projects-title-header {
+  margin: 0;
+  font-size: 1.4rem;
+  padding-left: 1%;
+  padding-bottom: 10px;
+  color: #75777a;
+  text-transform: uppercase;
+  flex: 1;
+  letter-spacing: 1px;
+  /* background-color: #0a6476; */
+}
+.project-title-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  font-family: "Abel";
+  text-align: left;
+  border-radius: 10px 0 0 10px;
+  margin: 5px 0;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #f8f8f8;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-title-button:hover {
+  background-color: #ddd;
+}
+/* Highlight the active project button */
+
+.project-title-button.active {
+  background-color: #18869c; /* Highlight color */
+  color: white; /* Text color when active */
+  font-weight: bold;
+  box-shadow: none;
+  border-left: 3px solid #0a6476; /* Optional: Add an accent border */
+}
+
+.project-info-content {
+  flex: 1; /* Take remaining space */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between sections */
+  padding: 20px;
+  height: 79vh;
+  background-color: #18869c;
+  /* background-color: #f8f8f8; */
+  border-radius: 0 10px 10px 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-info-box,
+.team-members-box,
+.tasks-box,
+.tasks-completed-box {
+  background-color: #f8f8f8; /* White background for boxes */
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for separation */
+  overflow-y: scroll;
+}
+
+.project-info-box h2,
+.team-members-box h3,
+.tasks-box h3,
+.tasks-completed-box h3 {
+  margin-bottom: 10px;
+  margin-top: 0px;
+  text-transform: uppercase;
+  color: #75777a;
+}
+.project-info-box {
+  height: 18vh;
+  grid-area: 1 / 1 / 2 / 6;
+}
+.team-members-box {
+  /* width: 23vw; */
+  grid-area: 2 / 1 / 4 / 3;
+}
+.tasks-box {
+  grid-area: 2 / 3 / 4 / 6;
+}
+.tasks-completed-box {
+  grid-area: 4 / 1 / 6 / 6;
+}
+
+.tasks-completed-box p {
+  font-weight: bold; /* Highlight completed tasks */
+}
+
+/* Optional: Adjust responsive styles */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Adjust sidebar width for smaller screens */
+  }
+
+  .project-page {
+    flex-direction: column; /* Stack on smaller screens */
+  }
+}
+/* Style for team member avatars */
+.team-member-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Different background colors for avatars */
+.avatar-color-1 {
+  background-color: #18869c;
+}
+.avatar-color-2 {
+  background-color: #0a6476;
+}
+.avatar-color-3 {
+  background-color: #5aaf76;
+}
+.avatar-color-4 {
+  background-color: #f4a261;
+}
+.hori-timeline {
+  position: relative;
+  margin: 0;
+  list-style-type: none;
+}
+
+.events {
+  display: flex;
+  justify-content: space-between;
+}
+
+.event-list {
+  position: relative;
+  width: 24%; /* Adjust this based on how many items you have */
+}
+
+.event-date {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #0a6476;
+  font-weight: 700;
+  background-color: #ecf2f5; /* Example background color */
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.font-size-16 {
+  margin-top: 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.text-muted {
+  /* font-weight: lighter; */
+  font-size: smaller;
+  color: #6c757d;
+}

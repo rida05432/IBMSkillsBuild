@@ -1,0 +1,220 @@
+/* Page layout */
+.full-page {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #ecf2f5;
+}
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: #ecf2f5;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  font-size: 36px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.box-wrapper {
+  display: flex;
+  justify-content: space-around;
+  /* margin-bottom: 40px; */
+  gap: 2%;
+  height: 100vh;
+}
+
+.box {
+  width: 30%;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  min-height: 300px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+/* Task styling */
+.task {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  height: 35px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Add Task Button */
+.add-task-button {
+  position: fixed;
+  top: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #0a6476;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Form styling */
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-wrapper {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 400px;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+}
+.task {
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Optional: Add some hover effects for better UX */
+.task:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Lighten background on hover */
+}
+.tasks-delete-button {
+  background: none;
+  border: none;
+  color: #acacac;
+  cursor: pointer;
+}
+
+.tasks-delete-button:hover {
+  color: #ff0000; /* Changes color to red on hover */
+}
+
+.dashboard-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  height: 100vh;
+}
+
+.side-stats {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.stat-card p {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.leaderboard-section {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.leaderboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.invite-btn {
+  background: #2dd4bf;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.leaderboard-table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.current-user {
+  background: #2dd4bf;
+  color: white;
+}
+
+.rank {
+  width: 60px;
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 10px;
+}
+
+.avatar {
+  font-size: 24px;
+}
+
+.name {
+  font-weight: 500;
+}
+
+.score {
+  font-weight: bold;
+  margin-left: auto;
+  padding-right: 20px;
+}

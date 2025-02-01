@@ -1,0 +1,12 @@
+/* App container styling */
+.App {
+  display: flex;
+  flex-direction: row;
+  height: 100vh; /* Full height of viewport */
+}
+
+/* Flex container for sidebar and main content */
+.sideflex {
+  display: flex;
+  width: 100%; /* Ensures it spans across the remaining space */
+}
